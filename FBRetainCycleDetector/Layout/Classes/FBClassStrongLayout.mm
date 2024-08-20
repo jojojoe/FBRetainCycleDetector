@@ -256,7 +256,8 @@ NSArray<id<FBObjectReference>> *FBGetObjectStrongReferences(id obj,
 
     if (!ivars) {
       ivars = FBGetStrongReferencesForClass(obj, currentClass, shouldIncludeSwiftObjects);
-      layoutCache[claseName] = ivars;
+//      layoutCache[claseName] = ivars;
+        layoutCache[(id<NSCopying>)currentClass] = ivars;
     }
     [array addObjectsFromArray:ivars];
 
